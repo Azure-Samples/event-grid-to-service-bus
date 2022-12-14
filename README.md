@@ -414,6 +414,8 @@ If you successfully deployed the sample, you should see the following Azure reso
 
 If you open the Azure Event Grid Topic and select the Event Subscriptions, you should see the following subscriptions, one for each tenant, and each with a `ServiceBusQueue` endpoint.
 
+![Azure Event Grid Topic Subscriptions](./images/event-grid-custom-topic-subscriptions.png)
+
 ## Test the solution
 
 You can use the `03-send-events.sh` script under the `scripts` folder to send a batch of events to the Azure Event Grid Custom Topic, one for each tenant, using a [curl](https://curl.se/) command. For more information, see [Publish events to Azure Event Grid custom topics using access keys](https://learn.microsoft.com/en-us/azure/event-grid/post-to-custom-topic).
