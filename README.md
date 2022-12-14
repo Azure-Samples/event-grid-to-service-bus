@@ -8,12 +8,12 @@ products:
 - azure-event-grid
 - azure-service-bus
 - vs-code
-name: "How to use an Azure Event Grid Custom Topic as a message broker to multiple Azure Service Bus namespaces"
+name: "How to use an Azure Event Grid Custom Topic as a message broker to dispatch messages to multiple Azure Service Bus namespaces"
 description: "This sample shows how to use an Azure Event Grid Custom Topic as a message broker in a multitenant scenario to send messages to multiple Azure Service Bus queues in different namespaces, one for each tenant."
 urlFragment: "event-grid-to-service-bus"
 ---
 
-# How to use an Azure Event Grid Custom Topic as a message broker to multiple Azure Service Bus namespaces
+# Azure Event Grid Custom Topic as a Message Broker
 
 Asynchronous messaging and event-driven communication are critical assets when building a distributed application that's composed of several internal and external services. This sample shows how to use an [Azure Event Grid Custom Topic](https://learn.microsoft.com/en-us/azure/event-grid/custom-topics) as a message broker in a multitenant scenario to send messages to multiple [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) queues in different namespaces, one for each tenant.
 
