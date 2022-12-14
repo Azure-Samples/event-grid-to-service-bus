@@ -47,7 +47,7 @@ The architecture is composed of the following Azure resources:
 - [Microsoft.ServiceBus/namespaces](https://learn.microsoft.com/en-us/azure/templates/microsoft.servicebus/namespaces?pivots=deployment-language-bicep): an [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) namespace and a queue where for each tenant. The sample deploys three tenants (`Fabrikam`, `Contoso`, and `Acme`), but you can modify the list of tenants.
 - [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts): when the [Azure Event Grid Custom Topic](https://learn.microsoft.com/en-us/azure/event-grid/custom-topics) receives an error for an event delivery attempt, the AZure Event Grid service decides whether it should [retry the delivery, dead-letter the event, or drop the event based on the type of the error](https://learn.microsoft.com/en-us/azure/event-grid/delivery-and-retry). When creating an event subscription, you can customize the settings for event delivery and dead-letter. This storage account is used to store dead-letter events for all the [Azure Event Grid Subscriptions](https://learn.microsoft.com/en-us/azure/event-grid/custom-topics). For more information, see [Set dead-letter location and retry policy](https://learn.microsoft.com/en-us/azure/event-grid/manage-event-delivery).
 
-For more information, see:
+For more information, see the following articles:
 
 - [Custom topics in Azure Event Grid](https://learn.microsoft.com/en-us/azure/event-grid/custom-topics)
 - [Azure Event Grid event schema](https://learn.microsoft.com/en-us/azure/event-grid/event-schema)
@@ -414,7 +414,7 @@ If you successfully deployed the sample, you should see the following Azure reso
 
 If you open the Azure Event Grid Topic and select the Event Subscriptions, you should see the following subscriptions, one for each tenant, and each with a `ServiceBusQueue` endpoint.
 
-![Azure Event Grid Topic Subscriptions](./images/event-grid-custom-topic-subscriptions.png)
+![Azure Event Grid Topic Subscriptions](./images/event-grid-subscriptions.png)
 
 ## Test the solution
 
