@@ -416,7 +416,7 @@ If you open the Azure Event Grid Topic and select the Event Subscriptions, you s
 
 ## Test the solution
 
-You can use the `03-send-events.sh` script under the `scripts` folder to send a batch of events to the Azure Event Grid Custom Topic, one for each tenant, using a [curl](https://curl.se/) command.
+You can use the `03-send-events.sh` script under the `scripts` folder to send a batch of events to the Azure Event Grid Custom Topic, one for each tenant, using a [curl](https://curl.se/) command. For more information, see [Publish events to Azure Event Grid custom topics using access keys](https://learn.microsoft.com/en-us/azure/event-grid/post-to-custom-topic).
 The scripts performs the following operations:
 
 - Creates a JSON array containing an event for each tenant.
