@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1001",
+    "eventType": "recordInserted",
+    "subject": "atom/events/fabrikam",
+    "eventTime": "2022-12-14T11:48:51.419+01:00",
+    "data": {
+      "tenant": "Fabrikam",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  },
+  {
+    "id": "1002",
+    "eventType": "recordInserted",
+    "subject": "atom/events/contoso",
+    "eventTime": "2022-12-14T11:48:51.421+01:00",
+    "data": {
+      "tenant": "Contoso",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  },
+  {
+    "id": "1003",
+    "eventType": "recordInserted",
+    "subject": "atom/events/acme",
+    "eventTime": "2022-12-14T11:48:51.422+01:00",
+    "data": {
+      "tenant": "Acme",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  }
+]
