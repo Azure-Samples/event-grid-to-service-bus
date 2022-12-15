@@ -496,7 +496,58 @@ curl -X POST \
   $endpoint
 ```
 
-The `events.json` file under the `scripts` folder contains a sample of the events generated and sent by the `03-send-events.sh` script.
+The `03-send-events.sh` script generates an array of events, one for each tenant. The `events.json` file under the `scripts` folder contains a sample of the events generated the script.
+
+```json
+[
+  {
+    "id": "1001",
+    "eventType": "recordInserted",
+    "subject": "atom/events/fabrikam",
+    "eventTime": "2022-12-14T11:48:51.419+01:00",
+    "data": {
+      "tenant": "Fabrikam",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  },
+  {
+    "id": "1002",
+    "eventType": "recordInserted",
+    "subject": "atom/events/contoso",
+    "eventTime": "2022-12-14T11:48:51.421+01:00",
+    "data": {
+      "tenant": "Contoso",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  },
+  {
+    "id": "1003",
+    "eventType": "recordInserted",
+    "subject": "atom/events/acme",
+    "eventTime": "2022-12-14T11:48:51.422+01:00",
+    "data": {
+      "tenant": "Acme",
+      "date": "2022-12-14T10:48:51Z"
+    }
+  }
+]
+```
+
+As you can note, the suffix of the `subject` field contains the name of the tenant. As shown in the picture below, each Event Grid Subscription defines a subject filter where the `subject` ends with the name of the tenant.
+
+![Subject Filter](./images/filter-expression.png)
+
+To verify that the script successfully sent an event to each tenant, you can use the Azure Portal to open each Service Bus namespace, one for each tenant, in the resource group, click `Queues` under `Entities` in the navigation bar, and select the `events` queue. As shown in the following picture, you should see a non-zero number in the `Active Messages`.
+
+![Active Messages](./images/active-messages.png)
+
+As shown in the following picture, you can use the [Service Bus Explorer](https://learn.microsoft.com/en-us/azure/service-bus-messaging/explorer) integrated in the Azure Portal to peek the message ands verify that the suffix of the `subject` field and the `data.tenant` field in the event payload contain the name of the tenant.
+
+![Service Bus Explorer integrated in the Azure Portal](./images/azure-service-bus-explorer.png)
+
+Alternatively, as shown in the following picture, you can use my [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) desktop application to peek or receive messages from the `events` queue of any tenant-specific Service Bus namespace:
+
+![Service Bus Explorer](./images/service-bus-explorer.png)
 
 ## Conclusions
 
